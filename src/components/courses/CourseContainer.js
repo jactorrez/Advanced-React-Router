@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 import Course from './Course';
-import CourseList from '../../data/courses';
 
-class HTML extends Component {
+
+class CourseContainer extends Component {
   render() {
-    let courseList = CourseList.HTML;
+   
+    let courseList = this.props.route.list;
+    console.log(courseList);
     let courses = courseList.map((course) => {
       return <Course title={course.title}
                      desc={course.description}
@@ -22,4 +24,4 @@ class HTML extends Component {
   }
 }
 
-export default HTML;
+export default CourseContainer;
